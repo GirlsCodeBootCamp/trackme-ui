@@ -1,26 +1,30 @@
 import './App.css';
+import AddTracker from './components/AddTracker';
 import Navbar from './components/Navbar';
 import logo from "./logo.png";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <div className='ninja-stub'>
-        <h1>
+      <header>
+        <Navbar />
+      </header>
+      <div className='main-content'>
+        <h1 className='title'>
           TrackMe Ninja
         </h1>
 
-      </div>
-      <div className='app-tracker-add'>
-        <div className='add-tracker'>
-          <input type="text" className='add-tracker-input' />
-          <button className='add-tracker-button'>Track</button>
-        </div>
-        <div className='app-logo'>
-          <img src={logo} alt="logo" className='app-logo' />
+        <div className='app-tracker-add'>
+          <AddTracker />
+          <div className='app-logo'>
+            <img src={logo} alt="logo" />
+          </div>
         </div>
       </div>
+
+      <footer>
+        &copy; Developed by Woman Career Boot Camp
+      </footer>
     </div>
   );
 }

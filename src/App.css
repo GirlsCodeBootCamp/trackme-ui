@@ -15,8 +15,18 @@
 }
 
 .app-logo {
+  width: 30%;
+}
+
+.app-logo img{
   height: 200px;
   opacity: 0.7;
+}
+
+
+.title {
+  margin: 50px 0;
+  text-align: center;
 }
 
 .nav-logo {
@@ -60,32 +70,12 @@ ul.menu li {
   justify-content: center;
 }
 
-.add-tracker {
-  width: 581px;
-  background: #FFFFFF;
-  border: 1px solid #D0D0D0;
-  box-sizing: border-box;
-  border-radius: 10px;
-  display: flex;
-}
-.add-tracker-input {
-  width: 481px;
-  height: 40px;
-  margin: 10px;
-  font-size: 20px;
-}
+/* Add tracker section */
 
-.add-tracker-input {border:0;outline:0;}
-.add-tracker-input:focus {outline:none!important;}
-
-.add-tracker-button {
-  width: 20%;
-  font-size: 20px;
-  margin: 5px;
-}
 
 .app-tracker-add {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
