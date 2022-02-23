@@ -1,6 +1,7 @@
 import './App.css';
 import AddTracker from './components/AddTracker';
 import Navbar from './components/Navbar';
+import Trackers from './components/Trackers';
 import logo from "./logo.png";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <img src={logo} alt="logo" />
           </div>
         </div>
+        <Trackers />
       </div>
 
       <footer>
