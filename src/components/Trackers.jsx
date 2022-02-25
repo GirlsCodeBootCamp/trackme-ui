@@ -7,24 +7,27 @@ function Trackers() {
     let [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        fetch("http://localhost:8000/trackers", {
-            mode: 'no-cors'
-        }).then((Response) => {
+        fetch("http://localhost:8000/trackers"
+        ).then((Response) => {
             if (Response.ok) {
                 console.log("trackers", Response.json())
                 return Response.json()
             }
-        }).then((data) => {
+        })
+        .then((data) => {
+            console.log("here")
+            console.log("trackies", Object.values(data))
             setTrackies(Object.values(data))
-        }).catch(() => {
+        })
+        .catch(() => {
             setErrorMessage("No connection to the API")
-            setTrackies([{"name": "Yandex",
-                "url_address": "https://ya.ru", "frequency": "D"},{"url_address": "yahoo.com",
-                "created_at": "2022-02-10T19:40:35.073346", "frequency": "H"}
-                ,{"url_address": "mail.ru",
-                "created_at": "2022-02-10T19:40:35.073346", "frequency": "D"},{"url_address": "torba.com.ua",
-                "created_at": "2022-02-10T19:40:35.073346",
-                "is_offer": "None", "frequency": "D"}])
+            // setTrackies([{"name": "Yandex",
+            //     "url_address": "https://ya.ru", "frequency": "D"},{"url_address": "yahoo.com",
+            //     "created_at": "2022-02-10T19:40:35.073346", "frequency": "H"}
+            //     ,{"url_address": "mail.ru",
+            //     "created_at": "2022-02-10T19:40:35.073346", "frequency": "D"},{"url_address": "torba.com.ua",
+            //     "created_at": "2022-02-10T19:40:35.073346",
+            //     "is_offer": "None", "frequency": "D"}])
         })
     }, []);
 
@@ -38,9 +41,9 @@ function Trackers() {
                 <div>
                     <span>{trackie.frequency}</span>
                 </div>
-                <label class="switch">
+                <label className="switch">
                     <input type="checkbox"/>
-                    <span class="slider round"></span>
+                    <span className="slider round"></span>
                 </label>
             </div>
         </div>)
