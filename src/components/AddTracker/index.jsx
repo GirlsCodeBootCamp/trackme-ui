@@ -7,6 +7,7 @@ export default function AddTracker() {
 
     function post_tracker() {
         fetch("http://localhost:8000/trackers", {
+            mode: 'no-cors',
             method: "POST",
             body: { "url_name": tracker }
         }).then((Response) => {
