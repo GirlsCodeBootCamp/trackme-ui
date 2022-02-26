@@ -1,8 +1,11 @@
 import './App.css';
-import AddTracker from './components/AddTracker';
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Trackers from './components/Trackers';
-import logo from "./logo.png";
 
 function App() {
   return (
@@ -11,19 +14,15 @@ function App() {
         <Navbar />
       </header>
       <div className='main-content'>
-        <h1 className='title'>
-          TrackMe Ninja
-        </h1>
-
-        <div className='app-tracker-add'>
-          <AddTracker />
-          <div className='app-logo'>
-            <img src={logo} alt="logo" />
-          </div>
-        </div>
-        <Trackers />
+        <Routes>
+          <Route path="/"
+            element={<Home />}
+          />
+          <Route path="/trackers"
+            element={<Trackers/>}
+          />
+        </Routes>
       </div>
-
       <footer>
         &copy; Developed by Woman Career Boot Camp
       </footer>
