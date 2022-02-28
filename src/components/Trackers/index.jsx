@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { useEffect } from "react";
+import './trackers.css';
 
 function Trackers() {
     let [trackies, setTrackies] = useState([])
     let [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        fetch("http://localhost:8000/trackers").then((Response) => {
-            console.log(Response)
+        fetch("http://localhost:8000/trackers"
+        ).then((Response) => {
             if (Response.ok) {
                 return Response.json()
             }
@@ -19,7 +20,21 @@ function Trackers() {
     }, []);
 
     function build_trackers() {
-        return trackies.map((trackie) => <li key={trackie.url_address}>{trackie.name} {trackie.name ? ":" : ""} {trackie.url_address}</li>)
+        return trackies.map((trackie) => 
+        <div key={trackie.url_address} className="tracker-box">
+            <div>
+                <span>{trackie.name} {trackie.name ? ":" : ""} {trackie.url_address}</span>
+            </div>
+            <div className="tracker-box-right">
+                <div>
+                    <span>{trackie.frequency}</span>
+                </div>
+                <label className="switch">
+                    <input type="checkbox"/>
+                    <span className="slider round"></span>
+                </label>
+            </div>
+        </div>)
     }
 
     return (

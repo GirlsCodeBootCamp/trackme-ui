@@ -26,7 +26,7 @@ export default function AddTracker() {
                 type="text" className='add-tracker-input'
             />
             <button
-                onClick={post_tracker()}
+                // onClick={post_tracker()}
                 className='add-tracker-button'
             >
                 Track
