@@ -1,23 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
-    <Auth0Provider
-        domain="dev-wnfxbjcp.us.auth0.com"
-        clientId="WDJj2xecZg2ep0r5vbkEIVJogMEGag6L"
-        redirectUri="http://localhost:3000/trackers"
-    >
-      <React.StrictMode>
-        <Router>
-          <App />
-        </Router>
-      </React.StrictMode>
-    </Auth0Provider>,
+  <Auth0Provider
+    domain={process.env.REACT_APP_DOMAIN}
+    clientId={process.env.REACT_APP_CLIENT_ID}
+    redirectUri={process.env.REACT_APP_REDIRECT_URI}
+    audience={process.env.REACT_APP_AUDIENCE}
+    useRefreshTokens={true}
+    cacheLocation={"localstorage"}
+  >
+    <React.StrictMode>
+      <Router>
+        <App />
+      </Router>
+    </React.StrictMode>
+  </Auth0Provider>,
   document.getElementById('root')
 );
 
