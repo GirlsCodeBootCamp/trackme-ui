@@ -1,5 +1,5 @@
 .tracker-box {
-  background: #FFFFFF;
+  background: #fff;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
   margin: 5px;
   padding: 5px 10px;
@@ -52,11 +52,11 @@
 }
 
 input:checked + .slider {
-  background-color: #EF5DA8;
+  background-color: #ef5Da8;
 }
 
 input:focus + .slider {
-  box-shadow: #EF5DA8
+  box-shadow: #ef5Da8
 }
 
 input:checked + .slider:before {

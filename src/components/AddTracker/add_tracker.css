@@ -1,23 +1,28 @@
 .add-tracker {
     width: 50%;
-    background: #FFFFFF;
-    border: 1px solid #D0D0D0;
+    background: #fff;
+    border: 1px solid #d0d0d0;
     box-sizing: border-box;
     border-radius: 10px;
     display: flex;
-  }
-  .add-tracker-input {
-    width: 80%;
-    height: 40px;
-    margin: 10px;
-    font-size: 20px;
-  }
-  
-  .add-tracker-input {border:0;outline:0;}
-  .add-tracker-input:focus {outline:none!important;}
-  
-  .add-tracker-button {
-    width: 20%;
-    font-size: 20px;
-    margin: 5px;
-  }
+}
+
+.add-tracker-input {
+  width: 80%;
+  height: 40px;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.add-tracker-input {
+  border: 0;
+  outline: 0;
+}
+
+.add-tracker-input:focus { outline: none!important;}
+
+.add-tracker-button {
+  width: 20%;
+  font-size: 20px;
+  margin: 5px;
+}
