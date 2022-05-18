@@ -15,7 +15,7 @@ export default function Navbar() {
         <header className="App-header">
             <Link to="/"><img src={logo} alt="logo" className='nav-logo' /></Link>
             {isAuthenticated && <Link to="/trackers">Trackers</Link>}
-            {isAuthenticated && <p>Add Tracker</p>}
+            {isAuthenticated && <Link to="/add">Add Tracker</Link>}
             {!isAuthenticated && <Login />}
             {isAuthenticated && <Logout />}
         </header>
