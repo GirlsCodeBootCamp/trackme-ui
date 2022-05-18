@@ -8,11 +8,10 @@ function Trackers() {
     const [trackies, setTrackies] = useState([])
     const [errorMessage, setErrorMessage] = useState("");
 
-    const { user } = useAuth0();
-
     useEffect(() => {
         console.log("trackies", trackies)
     }, [trackies])
+    const { user } = useAuth0();
 
     useEffect(() => {
         getTrackers()
