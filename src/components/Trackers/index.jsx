@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useEffect } from "react";
 import './trackers.css';
-import { withAuthenticationRequired } from "@auth0/auth0-react";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 
 function Trackers() {
     const [trackies, setTrackies] = useState([])
     const [errorMessage, setErrorMessage] = useState("");
+
+    const { user } = useAuth0();
 
     useEffect(() => {
         console.log("trackies", trackies)
@@ -15,14 +17,15 @@ function Trackers() {
     useEffect(() => {
         getTrackers()
             .then(data => data.json())
-            .then(res => setTrackies(res))
+            .then(res => setTrackies(res.trackers))
             .catch(err => setErrorMessage(err))
     }, []);
 
     async function getTrackers() {
         const token = localStorage.getItem('access_token')
 
-        return await fetch('http://localhost:8000/trackers/', {
+        return await fetch(`http://localhost:8000/users/${user.sub}`, {
+
             method: 'GET',
             headers: {
                 'Content-type': 'application/json',
